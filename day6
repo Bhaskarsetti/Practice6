@@ -1,0 +1,102 @@
+package TrailJavaPractice;
+import java.util.*;
+
+public class Practice7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Array examoples 
+		// single row arrays
+		Scanner obj1 = new Scanner(System.in);
+		int arry1 [] = new int[5];
+		int arry2 [] = new int[5];
+		int arry3 [][] = new int [3][3];
+		System.out.println("Enter the first 10 values of array1");
+		for (int i=0;i<arry1.length;i++) {
+			arry1[i]=obj1.nextInt();
+		}
+		System.out.println("Enter the Second 10 values of array1");
+		for (int j=0;j<arry2.length;j++) {
+			arry2[j]=obj1.nextInt();
+		}
+		System.out.println("Arry1 Length is   "+arry1.length+"\n"+"Arry2 Length is  "+arry2.length);
+		System.out.println("Your Entered array values is");
+		for (int k =0; k<arry1.length;k++) {
+			System.out.println(arry1[k]+"\t"+arry2[k]);
+		}
+		
+		// multi daimentional array printing
+		System.out.println("Enter the Matrix values");
+		for (int m=0;m<3;m++) {
+			for(int n =0;n<3;n++) {
+				arry3[m][n]=obj1.nextInt();
+			}
+		}
+		System.out.println("The Matrix you entered is   ");
+		
+		for (int m=0;m<3;m++) {
+			for(int n =0;n<3;n++) {
+				System.out.print(arry3[m][n]+"\t");
+			}
+			System.out.print("\n");
+			
+		}
+		System.out.println("\n");
+		// print for each loop
+		
+		for (int a :arry1) {
+			System.out.print(a+" ");
+		}
+		System.out.println("\n");
+		for (int b :arry2) {
+			System.out.print(b+" ");
+		}
+		
+		System.out.println("\n");
+		
+		// copying array in different methodes
+		// using operator
+		int copy1 [] = arry1;
+		for (int copy :copy1){
+			System.out.printf(copy + ",");
+			
+		}
+		System.out.println("\n");
+		// array valuse change by using ibndex
+		
+		arry1 [2]= -555;
+		for(int change : arry1) {
+			System.out.printf(change+",");
+		}
+		System.out.println("\n");
+		
+		//copying using index wise
+		
+		int copy2[] =new int [arry1.length];
+		for (int m=0;m<arry1.length;m++) {
+			copy2[m]=arry1[m];
+			System.out.printf(copy2[m]+",");
+		}
+		System.out.println("\n");
+		// arry copy method()
+		int copy3 [] = new int [arry1.length];
+		System.arraycopy(copy3, 0,arry1,0,arry1.length);
+		System.out.println("Copy3 = "+Arrays.toString(arry1));
+		System.out.println("\n");
+		//using copy range
+		
+		int copy4 [] = Arrays.copyOfRange(arry2,0,arry2.length);
+		System.out.println(Arrays.toString(copy4));
+		
+		// 2d Matric copyyy
+		System.out.println("\n");
+		int copy5 [][] = new int [arry3.length][];
+		for (int x=0;x<arry3.length;x++) {
+			copy5[x]=new int [arry3[x].length];
+			System.arraycopy(copy5[x],0,arry3[x],0,arry3[x].length);
+		}
+		System.out.println(Arrays.toString(copy5));
+
+	}
+
+}
